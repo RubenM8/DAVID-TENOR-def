@@ -1,0 +1,186 @@
+/* Variables de Diseño */
+:root {
+    --black: #1a1a1a;
+    --white: #ffffff;
+    --grey-light: #f8f8f8;
+    --gold: #b2945e;
+    --text-main: #333333;
+}
+
+/* Reset básico */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--white);
+    color: var(--text-main);
+    font-family: 'Montserrat', sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Navegación Estilo Beczala */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 6%;
+    background: var(--white);
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    letter-spacing: 3px;
+    font-weight: 700;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--black);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover { color: var(--gold); }
+
+/* Hero Section */
+.hero-section {
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fdfdfd; /* Aquí puedes poner una imagen de fondo */
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 8vw, 5rem);
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    letter-spacing: 8px;
+    color: var(--gold);
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+/* Secciones */
+.content-section { padding: 100px 10%; }
+.section-title {
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 60px;
+    font-weight: 400;
+}
+
+.light-bg { background-color: var(--grey-light); }
+
+/* Agenda Estilo Lista */
+.schedule-container { max-width: 900px; margin: 0 auto; }
+
+.event-item {
+    display: grid;
+    grid-template-columns: 150px 1fr 100px;
+    padding: 25px 0;
+    border-bottom: 1px solid #ddd;
+    align-items: center;
+}
+
+.event-date { font-weight: bold; font-size: 0.9rem; }
+.work { display: block; font-family: 'Playfair Display', serif; font-size: 1.2rem; font-style: italic; }
+.venue { font-size: 0.85rem; color: #777; }
+.event-link a { color: var(--gold); text-decoration: none; font-size: 0.8rem; border: 1px solid var(--gold); padding: 5px 10px; }
+
+/* Multimedia */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+}
+
+.media-placeholder {
+    aspect-ratio: 16 / 9;
+    background: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+}
+
+.main-footer {
+    text-align: center;
+    padding: 40px;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #999;
+}
+
+.tenor-socials {
+    text-align: center;
+    padding: 60px 0;
+    background-color: #fff;
+}
+
+.tenor-socials h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 30px;
+    color: #1a1a1a;
+}
+
+.social-icons-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.social-link {
+    text-decoration: none;
+    color: #666;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 400;
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+/* Línea sutil que aparece debajo al pasar el ratón */
+.social-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -5px;
+    left: 0;
+    background-color: #b2945e; /* Dorado */
+    transition: width 0.4s ease;
+}
+
+.social-link:hover {
+    color: #b2945e;
+}
+
+.social-link:hover::after {
+    width: 100%;
+}
