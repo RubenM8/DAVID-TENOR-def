@@ -312,71 +312,38 @@ body {
 }
 
 
-/* --- CONFIGURACIÓN PARA MÓVILES (Todo incluido) --- */
-@media (max-width: 768px) {
-    /* 1. Navbar y Menú */
+/* --- LIMPIEZA TOTAL Y AJUSTE MÓVIL --- */
+@media screen and (max-width: 768px) {
     .navbar { 
-        flex-direction: column; 
-        padding: 15px 10px; 
-    }
-
-    .logo-img {
-        height: 40px; 
+        flex-direction: column !important; 
+        padding: 15px 10px !important; 
     }
 
     .nav-links { 
-        margin-top: 15px; 
-        gap: 10px; 
-        flex-wrap: wrap;       
-        justify-content: center; 
-        padding: 0;
+        display: flex !important;
+        margin-top: 15px !important; 
+        gap: 10px !important; 
+        flex-wrap: wrap !important;       
+        justify-content: center !important; 
     }
 
-    .nav-links a {
-        font-size: 0.65rem; 
-        letter-spacing: 1px;
-    }
-
-    /* 2. Ajuste de la Foto y el Texto en el Hero */
     .hero-section {
-        background-position: 50% 15%; /* Sube o baja la foto (15% es más arriba) */
+        background-position: 50% 10% !important; /* Fuerza la foto más arriba */
+        background-attachment: scroll !important;
     }
 
     .hero-content {
-        margin-top: 120px; /* Baja el texto para que no tape la cara */
+        margin-top: 180px !important; /* Empuja el texto hacia abajo con fuerza */
     }
 
     .hero-content h1 {
-        font-size: 1.8rem; 
-        line-height: 1.2;
-        margin-bottom: 5px;
-    }
-
-    .subtitle {
-        font-size: 0.7rem;
-        letter-spacing: 3px;
-    }
-
-    /* 3. Secciones y Agenda */
-    .content-section { 
-        padding: 40px 20px; 
-    }
-
-    .section-title {
-        font-size: 1.6rem;
-        margin-bottom: 40px;
-    }
-
-    .event-item { 
-        grid-template-columns: 1fr; 
-        text-align: center; 
-        gap: 10px; 
+        font-size: 1.6rem !important; 
     }
 }
 
-/* --- CONFIGURACIÓN PARA ORDENADOR (Efecto fijo) --- */
-@media (min-width: 1024px) {
+/* --- FIX PARA ORDENADOR --- */
+@media screen and (min-width: 1024px) {
     .hero-section {
-        background-attachment: fixed;
+        background-attachment: fixed !important;
     }
 }
