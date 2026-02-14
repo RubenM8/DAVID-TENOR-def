@@ -1,4 +1,4 @@
-/* Variables de Diseño */
+/* --- 1. VARIABLES Y BASE --- */
 :root {
     --black: #1a1a1a;
     --white: #ffffff;
@@ -9,8 +9,11 @@
     --font-serif: 'Playfair Display', serif;
 }
 
-/* Reset y Base */
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
 
 html { scroll-behavior: smooth; }
 
@@ -22,7 +25,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Navegación */
+/* --- 2. NAVEGACIÓN --- */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -61,11 +64,12 @@ body {
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 2px;
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
 .nav-links a:hover { color: var(--gold); }
 
+/* --- 3. HERO SECTION (PORTADA) --- */
 .hero-section {
     width: 100%;
     height: 100vh;
@@ -76,7 +80,6 @@ body {
     text-align: center;
     padding: 0 20px;
     color: white;
-    /* Ajustamos el 20% para mover la foto arriba o abajo */
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
                 url('MULTIMEDIA/foto28.jpeg') no-repeat;
     background-position: 50% 20%; 
@@ -97,7 +100,7 @@ body {
     text-transform: uppercase;
 }
 
-/* Secciones Generales */
+/* --- 4. SECCIONES DE CONTENIDO --- */
 .content-section { padding: 100px 10%; }
 .light-bg { background-color: var(--grey-light); }
 
@@ -116,92 +119,7 @@ body {
     text-align: justify;
 }
 
-/* Agenda */
-.schedule-container { max-width: 900px; margin: 0 auto; }
-
-.event-item {
-    display: grid;
-    grid-template-columns: 150px 1fr 120px;
-    padding: 25px 0;
-    border-bottom: 1px solid #ddd;
-    align-items: center;
-}
-
-.event-date { font-weight: bold; color: var(--gold); }
-.work { display: block; font-family: var(--font-serif); font-size: 1.2rem; font-style: italic; }
-.venue { font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; }
-
-.event-link a { 
-    color: var(--gold); 
-    text-decoration: none;
-    border: 1px solid var(--gold); 
-    padding: 8px 15px; 
-    text-transform: uppercase;
-    font-size: 0.7rem;
-    transition: 0.3s;
-}
-
-.event-link a:hover {
-    background: var(--gold);
-    color: white;
-}
-
-/* Multimedia / Galería */
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-}
-
-.media-placeholder {
-    aspect-ratio: 16 / 9;
-    background: #eee;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #ddd;
-}
-
-/* Formulario */
-.contact-form {
-    max-width: 600px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.form-group { display: flex; flex-direction: column; gap: 8px; }
-
-.form-group label {
-    text-transform: uppercase;
-    font-size: 0.7rem;
-    font-weight: 600;
-}
-
-.form-group input, .form-group textarea {
-    padding: 12px;
-    border: 1px solid #ccc;
-    font-family: inherit;
-    outline: none;
-}
-
-.form-group input:focus, .form-group textarea:focus { border-color: var(--gold); }
-
-.btn-submit {
-    background: var(--black);
-    color: var(--white);
-    padding: 15px;
-    border: none;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.btn-submit:hover { background: var(--gold); }
-
-/* Redes Sociales y Footer */
+/* --- 5. REDES SOCIALES Y CONTACTO --- */
 .tenor-socials { 
     text-align: center; 
     padding: 80px 0; 
@@ -212,8 +130,6 @@ body {
     font-size: 1.1rem;
     text-transform: uppercase;
     letter-spacing: 4px;
-    color: var(--black);
-    /* Aquí hemos puesto la separación con los iconos */
     margin-bottom: 50px; 
 }
 
@@ -231,7 +147,7 @@ body {
     text-transform: uppercase;
     letter-spacing: 2px;
     position: relative;
-    transition: all 0.4s ease;
+    transition: 0.4s ease;
 }
 
 .social-link::after {
@@ -245,12 +161,30 @@ body {
     transition: 0.4s;
 }
 
-.social-link:hover { 
-    color: var(--gold); 
+.social-link:hover { color: var(--gold); }
+.social-link:hover::after { width: 100%; }
+
+.contact-info {
+    display: flex;            
+    flex-direction: column;   
+    align-items: center;      
+    margin-bottom: 40px;
 }
 
-.social-link:hover::after { 
-    width: 100%; 
+.btn-gmail {
+    text-decoration: none;
+    color: #db4437; 
+    border: 1px solid #db4437;
+    padding: 8px 20px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s ease;
+}
+
+.btn-gmail:hover {
+    background-color: #db4437;
+    color: white;
 }
 
 .main-footer {
@@ -261,58 +195,11 @@ body {
     color: #999;
     border-top: 1px solid #eee;
     letter-spacing: 1px;
-
 }
 
-.contact-info {
-    display: flex;            
-    flex-direction: column;   
-    align-items: center;      
-    text-align: center;
-    margin-bottom: 40px;
-    width: 100%;             /
-}
+/* --- 6. MEDIA QUERIES (RESPONSIVE) --- */
 
-.email-link {
-    font-size: 1.2rem;
-    font-family: 'Montserrat', sans-serif;
-    color: var(--black);
-    text-decoration: none !important;
-    border-bottom: 1px solid var(--gold);
-    padding-bottom: 5px;
-    transition: color 0.3s ease;
-    display: inline-block;    
-}
-
-.email-link:hover {
-    color: var(--gold);
-    border-bottom-color: var(--black);
-}
-
-.opciones-correo {
-    margin-top: 15px;
-    display: flex;
-    gap: 10px;
-}
-
-.btn-gmail {
-    text-decoration: none;
-    color: #db4437; /* Color rojo Gmail */
-    border: 1px solid #db4437;
-    padding: 5px 15px;
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: 0.3s;
-}
-
-.btn-gmail:hover {
-    background-color: #db4437;
-    color: white;
-}
-
-
-/* --- SUSTITUCIÓN COMPLETA: AJUSTE DE RETRATO Y MÓVIL --- */
+/* AJUSTES PARA MÓVIL */
 @media screen and (max-width: 768px) {
     .navbar { 
         flex-direction: column !important; 
@@ -328,34 +215,29 @@ body {
         padding: 0 !important;
     }
 
-    .nav-links a {
-        font-size: 0.65rem !important;
-    }
+    .nav-links a { font-size: 0.65rem !important; }
 
     .hero-section {
-        /* 80% horizontal mueve la foto a la izquierda para centrarte a ti */
-        /* 15% vertical para que no se corte la cabeza */
         background-position: 80% 15% !important; 
         background-attachment: scroll !important;
     }
 
-    .hero-content {
-        /* Bajamos el texto para que tu cara quede libre en el centro */
-        margin-top: 220px !important; 
-    }
+    .hero-content { margin-top: 220px !important; }
 
     .hero-content h1 {
         font-size: 1.6rem !important;
-        text-shadow: 2px 2px 8px rgba(0,0,0,0.7); /* Sombra para que tu nombre se lea bien */
+        text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
     }
 
     .subtitle {
         font-size: 0.7rem !important;
         letter-spacing: 3px !important;
     }
+
+    .content-section { padding: 60px 5%; }
 }
 
-/* --- FIX PARA ORDENADOR (Efecto elegante) --- */
+/* EFECTO FIJO PARA ORDENADOR */
 @media screen and (min-width: 1024px) {
     .hero-section {
         background-attachment: fixed !important;
