@@ -312,7 +312,7 @@ body {
 }
 
 
-/* --- LIMPIEZA TOTAL Y AJUSTE MÓVIL --- */
+/* --- SUSTITUCIÓN COMPLETA: AJUSTE DE RETRATO Y MÓVIL --- */
 @media screen and (max-width: 768px) {
     .navbar { 
         flex-direction: column !important; 
@@ -325,25 +325,40 @@ body {
         gap: 10px !important; 
         flex-wrap: wrap !important;       
         justify-content: center !important; 
+        padding: 0 !important;
+    }
+
+    .nav-links a {
+        font-size: 0.65rem !important;
     }
 
     .hero-section {
-        background-position: 50% 10% !important; /* Fuerza la foto más arriba */
+        /* 80% horizontal mueve la foto a la izquierda para centrarte a ti */
+        /* 15% vertical para que no se corte la cabeza */
+        background-position: 80% 15% !important; 
         background-attachment: scroll !important;
     }
 
     .hero-content {
-        margin-top: 180px !important; /* Empuja el texto hacia abajo con fuerza */
+        /* Bajamos el texto para que tu cara quede libre en el centro */
+        margin-top: 220px !important; 
     }
 
     .hero-content h1 {
-        font-size: 1.6rem !important; 
+        font-size: 1.6rem !important;
+        text-shadow: 2px 2px 8px rgba(0,0,0,0.7); /* Sombra para que tu nombre se lea bien */
+    }
+
+    .subtitle {
+        font-size: 0.7rem !important;
+        letter-spacing: 3px !important;
     }
 }
 
-/* --- FIX PARA ORDENADOR --- */
+/* --- FIX PARA ORDENADOR (Efecto elegante) --- */
 @media screen and (min-width: 1024px) {
     .hero-section {
         background-attachment: fixed !important;
+        background-position: center center !important;
     }
 }
